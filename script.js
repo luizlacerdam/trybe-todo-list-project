@@ -10,13 +10,18 @@ function criarTarefa() {
     LISTA_ORDENADA.appendChild(novaLi);
     INPUT.value = ''
   });
-}criarTarefa();
+} criarTarefa();
 
 function alterarCorItem() {
   LISTA_ORDENADA.addEventListener('click', function (event) {
     if (event.target.localName === 'li') {
+      for (let i = 0; i < ITENS.length; i += 1) {
+        if (ITENS[i].classList[0] === 'item-selected') {
+          ITENS[i].classList.remove('item-selected');
+        }
+      }
       event.target.classList.add('item-selected');
-    } 
+    }
   });
 }
 alterarCorItem();
