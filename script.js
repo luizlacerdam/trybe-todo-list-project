@@ -2,6 +2,7 @@ const LISTA_ORDENADA = document.getElementById('lista-tarefas');
 const INPUT = document.getElementById('texto-tarefa');
 const BUTTON = document.getElementById('criar-tarefa');
 const ITENS = document.getElementsByTagName('li');
+const BTN_CLEAR = document.getElementById('apaga-tudo');
 
 function criarTarefa() {
   BUTTON.addEventListener('click', function () {
@@ -37,3 +38,12 @@ function completed() {
   });
 }
 completed();
+
+function clear() {
+  BTN_CLEAR.addEventListener('click', function () {
+    while (LISTA_ORDENADA.firstChild) {
+      LISTA_ORDENADA.removeChild(LISTA_ORDENADA.firstChild)
+    }
+  });
+}
+clear();
