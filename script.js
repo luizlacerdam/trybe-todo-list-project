@@ -16,7 +16,7 @@ function alterarCorItem() {
   LISTA_ORDENADA.addEventListener('click', function (event) {
     if (event.target.localName === 'li') {
       for (let i = 0; i < ITENS.length; i += 1) {
-        if (ITENS[i].classList[0] === 'item-selected') {
+        if (ITENS[i].classList.contains('item-selected')) {
           ITENS[i].classList.remove('item-selected');
         }
       }
@@ -25,3 +25,15 @@ function alterarCorItem() {
   });
 }
 alterarCorItem();
+
+function completed() {
+  LISTA_ORDENADA.addEventListener('dblclick', function (event) {
+    if (event.target.localName === 'li' && !event.target.classList.contains('completed')) {
+      event.target.classList.add('completed');
+    } else {
+      event.target.classList.remove('completed');
+    }
+
+  });
+}
+completed();
