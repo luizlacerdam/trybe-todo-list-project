@@ -4,6 +4,7 @@ const BUTTON = document.getElementById('criar-tarefa');
 const ITENS = document.getElementsByTagName('li');
 const BTN_CLEAR_ALL = document.getElementById('apaga-tudo');
 const BTN_CLEAR_DONE = document.getElementById('remover-finalizados');
+const BTN_SALVAR = document.getElementById('salvar-tarefas');
 
 function criarTarefa() {
   BUTTON.addEventListener('click', function () {
@@ -59,3 +60,32 @@ function clearDone() {
   });
 }
 clearDone();
+
+function salvarTarefas() {
+  BTN_SALVAR.addEventListener('click', function () {
+    localStorage.clear();
+    for (let i = 0; i < ITENS.length; i += 1) {
+      let novoObj = {
+        item: i,
+        classes: ITENS[i].className,
+        text: ITENS[i].innerText
+      }
+      localStorage.setItem(i, JSON.stringify(novoObj));
+    }
+  });
+}
+salvarTarefas();
+
+window.onload = function () {
+  if (localStorage.length > 0) {
+    for (let i = 0; i < localStorage.length; i += 1) {
+      let novaLi = document.createElement('li');
+      let myObj = JSON.parse(localStorage.getItem(i))
+      novaLi.innerText = myObj.text;
+      novaLi.className = myObj.classes;
+      LISTA_ORDENADA.appendChild(novaLi);
+    }
+  }  
+}
+
+
