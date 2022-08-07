@@ -1,6 +1,19 @@
+* {
+  text-align: center;
+  font-family: sans-serif;
+  padding: 10px;
+  ;
+}
 .item-selected {
   background-color: gray;
 }
 .completed {
   text-decoration: line-through solid black;
+}
+li {
+  list-style: none;
+}
+.buttao {
+  width: 200px;
+  border-radius: 15px;
 }
