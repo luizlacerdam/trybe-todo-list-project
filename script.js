@@ -7,7 +7,7 @@ const BTN_CLEAR_DONE = document.getElementById('remover-finalizados');
 const BTN_SALVAR = document.getElementById('salvar-tarefas');
 const BTN_MOVER_CIMA = document.getElementById('mover-cima');
 const BTN_MOVER_BAIXO = document.getElementById('mover-baixo');
-
+const BTN_REMOVER_SELECTED = document.getElementById('remover-selecionado');
 
 function criarTarefa() {
   BUTTON.addEventListener('click', function () {
@@ -166,3 +166,16 @@ function moverBaixo() {
   });
 }
 moverBaixo();
+
+function removeItem() {
+  BTN_REMOVER_SELECTED.addEventListener('click', function () {
+    if (LISTA_ORDENADA.children.length > 0) {
+      for (let i = 0; i < ITENS.length; i += 1) {
+        if (ITENS[i].classList.contains('item-selected')) {
+          LISTA_ORDENADA.children[i].remove();
+        }
+      }
+    }
+  });
+}
+removeItem();
