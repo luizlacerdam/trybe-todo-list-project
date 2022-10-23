@@ -5,4 +5,40 @@ html {
 body {
   font-family: sans-serif;
   background-color: white;
+  padding: 20px;
+  margin-top: 50px;
+  margin-left: 25px;
+  margin-right: 75px;
+  border-radius: 25px;
+}
+
+header h1 {
+  margin-bottom: 0px;
+}
+
+#funcionamento {
+  margin-top: 10px;
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
+#texto-tarefa:focus {
+  outline: none !important;
+  border: 1px solid rgb(11, 94, 215);
+  box-shadow: 0 0 10px #719ECE;
+}
+
+.buttao {
+  border-radius: 10px;
+  padding: 3px 15px 3px 15px;
+  color: white;
+  border: none;
+}
+
+.buttao:hover {
+  opacity: 80%;
+}
+
+#criar-tarefa {
+  background-color: rgb(11, 94, 215);
 }
