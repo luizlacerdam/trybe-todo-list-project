@@ -42,3 +42,38 @@ header h1 {
 #criar-tarefa {
   background-color: rgb(11, 94, 215);
 }
+
+#opt-buttons {
+  display: flex;
+  width: 500px;
+  justify-content: space-between;
+}
+
+#remover-selecionado {
+  background-color: brown;
+}
+
+#mover-cima,
+#mover-baixo {
+  background-color: orange;
+}
+
+#apaga-tudo {
+  background-color: rgb(11, 94, 215);
+}
+
+#remover-finalizados {
+  background-color: brown;
+}
+
+#salvar-tarefas {
+  background-color: rgb(22, 159, 17);
+}
+
+.item-selected {
+  background-color: gray;
+}
+
+.completed {
+  text-decoration: line-through solid black;
+}

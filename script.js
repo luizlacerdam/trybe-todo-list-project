@@ -113,7 +113,6 @@ function moverCima() {
               class: ITENS[positionSelected - 1].className,
               text: ITENS[positionSelected - 1].innerText
             };
-            console.log(itemAnterior);
             //clonar item selecionado ao item anterior
             ITENS[positionSelected - 1].className = ITENS[positionSelected].className
             ITENS[positionSelected - 1].innerText = ITENS[positionSelected].innerText
